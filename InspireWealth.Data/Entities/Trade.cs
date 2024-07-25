@@ -25,7 +25,11 @@ namespace InspireWealth.Data.Entities
         public int Quantity { get; set; } = 0;
 
         [Required]
-        public decimal TradePrice { get; set; } = 0;
+        public decimal TradeProfit { get; set; } = 0;
+
+        // need to get these from the stock entity's current price when the trade is made
+        public decimal BuyPrice { get; set; } = 0;
+        public decimal SellPrice { get; set; } = 0;
 
         [Required]
         public DateTime TradeDate { get; set; } = DateTime.Now;
