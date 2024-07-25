@@ -1,1 +1,1 @@
-# InspireWealth
+# InvestaMentor
