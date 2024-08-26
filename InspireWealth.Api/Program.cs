@@ -1,6 +1,13 @@
 using InspireWealth.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Builder;
+using InspireWealth.Services.Mappers;
+using InspireWealth.Data.UnitOfWork;
+using InspireWealth.Data.Repository;
+using InspireWealth.Services.Interfaces;
+using InspireWealth.Services;
 
 namespace InspireWealth.Api
 {
@@ -24,6 +31,21 @@ namespace InspireWealth.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            builder.Services.AddScoped<IStockService, StockService>();
+            builder.Services.AddScoped<IPortfolioService, PortfolioService>();
+            builder.Services.AddScoped<IPortfolioTransactionService, PortfolioTransactionService>();
+            builder.Services.AddScoped<IMarketDataService, MarketDataService>();
+            builder.Services.AddScoped<ITradeService, TradeService>();
+
+            //to fetch stock data
+            //builder.Services.AddHttpClient<>
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -44,3 +66,5 @@ namespace InspireWealth.Api
         }
     }
 }
+
+//RLT4EHLRZLQRI1TJ --> API Key for Alpha Vantage

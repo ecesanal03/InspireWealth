@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InspireWealth.Data\InspireWealth.Data.csproj" />
+    <ProjectReference Include="..\InspireWealth.Services\InspireWealth.Services.csproj" />
   </ItemGroup>
 
 </Project>

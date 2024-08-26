@@ -11,12 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InspireWealth.Api\InspireWealth.Api.csproj" />
     <ProjectReference Include="..\InspireWealth.Data\InspireWealth.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InspireWealthAPIService\" />
+    <Folder Include="InvestaMentorAPIService\" />
   </ItemGroup>
 
 </Project>
